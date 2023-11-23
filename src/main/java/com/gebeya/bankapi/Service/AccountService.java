@@ -3,7 +3,7 @@ package com.gebeya.bankapi.Service;
 import com.gebeya.bankapi.Model.DTO.*;
 import com.gebeya.bankapi.Model.Entities.Account;
 import com.gebeya.bankAPI.Model.DTO.TransferDTO;
-import com.gebeya.bankAPI.Model.DTO.TopUpResponseDTO;
+
 
 
 public interface AccountService {

@@ -2,6 +2,7 @@ package com.gebeya.bankapi.ServiceImpl;
 
 import com.gebeya.bankapi.Exception.ErrorMessage;
 import com.gebeya.bankapi.Model.DTO.CustomerInfoDTO;
+import com.gebeya.bankapi.Model.DTO.MobileBankingUsersDTO;
 import com.gebeya.bankapi.Model.DTO.ResponseModel;
 import com.gebeya.bankapi.Model.Entities.MobileBankingUser;
 import com.gebeya.bankapi.Model.Enums.CustomerProfile;

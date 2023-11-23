@@ -2,6 +2,7 @@ package com.gebeya.bankapi.ServiceImpl;
 
 import com.gebeya.bankapi.Model.Entities.History;
 import com.gebeya.bankapi.Repository.HistoryRepository;
+import com.gebeya.bankapi.Service.HistoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

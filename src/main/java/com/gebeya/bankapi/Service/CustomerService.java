@@ -1,7 +1,9 @@
 package com.gebeya.bankapi.Service;
 
-import com.gebeya.bankAPI.Model.DTO.ResponseModel;
-import com.gebeya.bankAPI.Model.Entities.Customer;
+
+
+import com.gebeya.bankapi.Model.DTO.ResponseModel;
+import com.gebeya.bankapi.Model.Entities.Customer;
 
 import java.util.Optional;
 
