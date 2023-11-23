@@ -1,16 +1,19 @@
 package com.gebeya.bankapi.Serviceimpl;
-import com.gebeya.bankAPI.Exception.ErrorMessage;
-import com.gebeya.bankAPI.Model.DTO.*;
-import com.gebeya.bankAPI.Model.Entities.Account;
-import com.gebeya.bankAPI.Model.Entities.Customer;
-import com.gebeya.bankAPI.Model.Entities.History;
-import com.gebeya.bankAPI.Model.Entities.Transaction;
-import com.gebeya.bankAPI.Model.Enums.*;
-import com.gebeya.bankAPI.Repository.AccountRepository;
-import com.gebeya.bankAPI.Repository.CustomerRepository;
-import com.gebeya.bankAPI.Repository.HistoryRepository;
-import com.gebeya.bankAPI.Repository.TransactionRepository;
-import com.gebeya.bankAPI.Service.AccountService;
+import com.gebeya.bankapi.Exception.ErrorMessage;
+import com.gebeya.bankapi.Model.DTO.CustomerProfileByAccountDTO;
+import com.gebeya.bankapi.Model.DTO.DefaultCustomerDTO;
+import com.gebeya.bankapi.Model.DTO.MerchantCustomerDTO;
+import com.gebeya.bankapi.Model.DTO.ResponseModel;
+import com.gebeya.bankapi.Model.Entities.Account;
+import com.gebeya.bankapi.Model.Entities.Customer;
+import com.gebeya.bankapi.Model.Entities.History;
+import com.gebeya.bankapi.Model.Entities.Transaction;
+import com.gebeya.bankapi.Model.Enums.*;
+import com.gebeya.bankapi.Repository.AccountRepository;
+import com.gebeya.bankapi.Repository.CustomerRepository;
+import com.gebeya.bankapi.Repository.HistoryRepository;
+import com.gebeya.bankapi.Repository.TransactionRepository;
+import com.gebeya.bankapi.Service.AccountService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -99,9 +102,9 @@ public class AccountServiceImpl implements AccountService {
             throw new ErrorMessage(HttpStatus.NOT_FOUND,"invalid AccountNo");
 
         double amount = accountRepository.findById(accountNo).get().getBalance();
-        CustomerProfileByAccountDTO  customerProfileByAccountDTO = customerProfileExtractor(accountNo);
+        CustomerProfileByAccountDTO customerProfileByAccountDTO = customerProfileExtractor(accountNo);
 
-        historyRepository.save(new History(customerProfileByAccountDTO.getMobileNo(),ResponseCode.successful,TransactionCode.BalanceInquiry,accountRepository.findById(accountNo).get()));
+        historyRepository.save(new History(customerProfileByAccountDTO.getMobileNo(), ResponseCode.successful, TransactionCode.BalanceInquiry,accountRepository.findById(accountNo).get()));
         return new ResponseModel(true,"the current amount is "+amount);
     }
 
@@ -122,7 +125,7 @@ public class AccountServiceImpl implements AccountService {
 
         if(senderAccount.getAccountStatus().equals(AccountStatus.Blocked) || receiverAccount.getAccountStatus().equals(AccountStatus.Blocked))
         {
-            historyRepository.save(new History(TransactionCode.Transfer,senderAccount,SIDE.Debit,transferDTO.getAmount(),ResponseCode.failed,senderMobileNo.getMobileNo()));
+            historyRepository.save(new History(TransactionCode.Transfer,senderAccount, SIDE.Debit,transferDTO.getAmount(),ResponseCode.failed,senderMobileNo.getMobileNo()));
             historyRepository.save(new History(TransactionCode.Transfer,receiverAccount,SIDE.Credit,transferDTO.getAmount(),ResponseCode.failed,receiverMobileNo.getMobileNo()));
             throw new ErrorMessage(HttpStatus.BAD_REQUEST,"Account is blocked");
         }
