@@ -1,4 +1,12 @@
 package com.gebeya.bankAPI.Config;
+/**
+ * The localConfig  program implements an application that
+ * simply displays Language Messages! to the standard output.
+ *
+ * @author  Elizabeth
+ * @version 2.0
+ * @since   2023-01-01
+ */
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
