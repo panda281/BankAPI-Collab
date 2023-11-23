@@ -1,10 +1,11 @@
-package com.gebeya.bankapi.Serviceimpl;
+package com.gebeya.bankapi.ServiceImpl;
 
-import com.gebeya.bankAPI.Exception.ErrorMessage;
-import com.gebeya.bankAPI.Model.DTO.ResponseModel;
-import com.gebeya.bankAPI.Model.Entities.Customer;
-import com.gebeya.bankAPI.Repository.CustomerRepository;
-import com.gebeya.bankAPI.Service.CustomerService;
+
+import com.gebeya.bankapi.Exception.ErrorMessage;
+import com.gebeya.bankapi.Model.DTO.ResponseModel;
+import com.gebeya.bankapi.Model.Entities.Customer;
+import com.gebeya.bankapi.Repository.CustomerRepository;
+import com.gebeya.bankapi.Service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;

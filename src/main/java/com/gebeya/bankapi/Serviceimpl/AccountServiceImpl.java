@@ -1,9 +1,6 @@
-package com.gebeya.bankapi.Serviceimpl;
+package com.gebeya.bankapi.ServiceImpl;
 import com.gebeya.bankapi.Exception.ErrorMessage;
-import com.gebeya.bankapi.Model.DTO.CustomerProfileByAccountDTO;
-import com.gebeya.bankapi.Model.DTO.DefaultCustomerDTO;
-import com.gebeya.bankapi.Model.DTO.MerchantCustomerDTO;
-import com.gebeya.bankapi.Model.DTO.ResponseModel;
+import com.gebeya.bankapi.Model.DTO.*;
 import com.gebeya.bankapi.Model.Entities.Account;
 import com.gebeya.bankapi.Model.Entities.Customer;
 import com.gebeya.bankapi.Model.Entities.History;
@@ -22,6 +19,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.BodyInserters;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
+import com.gebeya.bankapi.Model.DTO.*;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
@@ -109,7 +107,7 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
-    public ResponseModel transfer(TransferDTO transferDTO)
+    public ResponseModel transfer(com.gebeya.bankAPI.Model.DTO.TransferDTO transferDTO)
     {
         if(!(accountRepository.existsById(transferDTO.getSenderAccountNo()) && accountRepository.existsById(transferDTO.getReceiverAccountNo())))
             throw new ErrorMessage(HttpStatus.NOT_FOUND,"account could not be found");

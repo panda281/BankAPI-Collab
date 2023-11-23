@@ -1,14 +1,14 @@
-package com.gebeya.bankapi.Serviceimpl;
-import com.gebeya.bankAPI.Exception.ErrorMessage;
-import com.gebeya.bankAPI.Model.DTO.MobileBankingUsersDTO;
-import com.gebeya.bankAPI.Model.DTO.ResponseModel;
-import com.gebeya.bankAPI.Model.DTO.CustomerInfoDTO;
-import com.gebeya.bankAPI.Model.Entities.MobileBankingUser;
-import com.gebeya.bankAPI.Model.Enums.CustomerProfile;
-import com.gebeya.bankAPI.Repository.AccountRepository;
-import com.gebeya.bankAPI.Repository.CustomerRepository;
-import com.gebeya.bankAPI.Repository.MobileBankingUserRepository;
-import com.gebeya.bankAPI.Service.MobileBankingUserService;
+package com.gebeya.bankapi.ServiceImpl;
+
+import com.gebeya.bankapi.Exception.ErrorMessage;
+import com.gebeya.bankapi.Model.DTO.CustomerInfoDTO;
+import com.gebeya.bankapi.Model.DTO.ResponseModel;
+import com.gebeya.bankapi.Model.Entities.MobileBankingUser;
+import com.gebeya.bankapi.Model.Enums.CustomerProfile;
+import com.gebeya.bankapi.Repository.AccountRepository;
+import com.gebeya.bankapi.Repository.CustomerRepository;
+import com.gebeya.bankapi.Repository.MobileBankingUserRepository;
+import com.gebeya.bankapi.Service.MobileBankingUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;

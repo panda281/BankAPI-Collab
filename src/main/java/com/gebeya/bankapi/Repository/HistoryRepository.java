@@ -1,6 +1,7 @@
 package com.gebeya.bankapi.Repository;
 
-import com.gebeya.bankAPI.Model.Entities.History;
+
+import com.gebeya.bankapi.Model.Entities.History;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;

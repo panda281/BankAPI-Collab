@@ -1,6 +1,6 @@
 package com.gebeya.bankapi.Repository;
-import com.gebeya.bankAPI.Model.DTO.UserModel;
-import com.gebeya.bankAPI.Model.Entities.MobileBankingUser;
+
+import com.gebeya.bankapi.Model.Entities.MobileBankingUser;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

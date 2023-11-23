@@ -1,8 +1,9 @@
 package com.gebeya.bankapi.Repository;
 
-import com.gebeya.bankAPI.Model.DTO.CustomerInfoDTO;
-import com.gebeya.bankAPI.Model.DTO.CustomerProfileByAccountDTO;
-import com.gebeya.bankAPI.Model.Entities.Customer;
+
+import com.gebeya.bankapi.Model.DTO.CustomerInfoDTO;
+import com.gebeya.bankapi.Model.DTO.CustomerProfileByAccountDTO;
+import com.gebeya.bankapi.Model.Entities.Customer;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;

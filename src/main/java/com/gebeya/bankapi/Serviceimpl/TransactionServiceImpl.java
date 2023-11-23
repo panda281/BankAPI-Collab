@@ -1,16 +1,17 @@
-package com.gebeya.bankapi.Serviceimpl;
-import com.gebeya.bankAPI.Exception.ErrorMessage;
-import com.gebeya.bankAPI.Model.DTO.*;
-import com.gebeya.bankAPI.Model.Entities.History;
-import com.gebeya.bankAPI.Model.Entities.Transaction;
-import com.gebeya.bankAPI.Model.Enums.ResponseCode;
-import com.gebeya.bankAPI.Model.Enums.TransactionCode;
-import com.gebeya.bankAPI.Repository.AccountRepository;
-import com.gebeya.bankAPI.Repository.CustomerRepository;
-import com.gebeya.bankAPI.Repository.HistoryRepository;
-import com.gebeya.bankAPI.Repository.TransactionRepository;
-import com.gebeya.bankAPI.Service.AccountService;
-import com.gebeya.bankAPI.Service.TransactionService;
+package com.gebeya.bankapi.ServiceImpl;
+
+import com.gebeya.bankapi.Exception.ErrorMessage;
+import com.gebeya.bankapi.Model.DTO.ShortStatementDTO;
+import com.gebeya.bankapi.Model.Entities.History;
+import com.gebeya.bankapi.Model.Entities.Transaction;
+import com.gebeya.bankapi.Model.Enums.ResponseCode;
+import com.gebeya.bankapi.Model.Enums.TransactionCode;
+import com.gebeya.bankapi.Repository.AccountRepository;
+import com.gebeya.bankapi.Repository.CustomerRepository;
+import com.gebeya.bankapi.Repository.HistoryRepository;
+import com.gebeya.bankapi.Repository.TransactionRepository;
+import com.gebeya.bankapi.Service.AccountService;
+import com.gebeya.bankapi.Service.TransactionService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -92,7 +93,7 @@ public class TransactionServiceImpl implements TransactionService {
         if(!accountRepository.existsById(accountNo))
             throw new ErrorMessage(HttpStatus.NOT_FOUND,"Account could not be found");
         String phoneNo = accountService.customerProfileExtractor(accountNo).getMobileNo();
-        historyRepository.save(new History(phoneNo,ResponseCode.successful,TransactionCode.ShortStatement,accountRepository.findById(accountNo).get()));
+        historyRepository.save(new History(phoneNo,ResponseCode.successful, TransactionCode.ShortStatement,accountRepository.findById(accountNo).get()));
         List<ShortStatementDTO> shortStatements = transactionRepository.findFirst5ByAccount_AccountNoOrderByTransactionDate(accountNo);
         if(shortStatements.isEmpty())
             throw new ErrorMessage(HttpStatus.NOT_FOUND,"Transaction is empty");

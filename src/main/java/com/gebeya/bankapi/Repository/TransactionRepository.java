@@ -1,8 +1,9 @@
 package com.gebeya.bankapi.Repository;
 
-import com.gebeya.bankAPI.Model.DTO.ShortStatementDTO;
-import com.gebeya.bankAPI.Model.Entities.Transaction;
-import com.gebeya.bankAPI.Model.Enums.ResponseCode;
+
+import com.gebeya.bankapi.Model.DTO.ShortStatementDTO;
+import com.gebeya.bankapi.Model.Entities.Transaction;
+import com.gebeya.bankapi.Model.Enums.ResponseCode;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;

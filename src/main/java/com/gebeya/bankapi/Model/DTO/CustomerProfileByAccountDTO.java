@@ -1,6 +1,7 @@
 package com.gebeya.bankapi.Model.DTO;
-import com.gebeya.bankAPI.Model.Enums.AccountStatus;
-import com.gebeya.bankAPI.Model.Enums.CustomerProfile;
+
+
+import com.gebeya.bankapi.Model.Enums.CustomerProfile;
 
 public class CustomerProfileByAccountDTO {
     private long cif;
