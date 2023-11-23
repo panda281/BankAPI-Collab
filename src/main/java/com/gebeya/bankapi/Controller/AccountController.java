@@ -1,12 +1,14 @@
 package com.gebeya.bankapi.Controller;
 
-import com.gebeya.bankAPI.Model.DTO.*;
-import com.gebeya.bankAPI.Model.Entities.Account;
-import com.gebeya.bankAPI.Repository.HistoryRepository;
-import com.gebeya.bankAPI.Service.AccountService;
-import com.gebeya.bankAPI.Service.MobileBankingUserService;
-import com.gebeya.bankAPI.Service.Profile;
-import com.gebeya.bankAPI.Service.TransactionService;
+
+import com.gebeya.bankapi.Model.DTO.MobileBankingUsersDTO;
+import com.gebeya.bankapi.Model.DTO.ResponseModel;
+import com.gebeya.bankapi.Model.DTO.ShortStatementDTO;
+import com.gebeya.bankapi.Model.Entities.Account;
+import com.gebeya.bankapi.Repository.HistoryRepository;
+import com.gebeya.bankapi.Service.AccountService;
+import com.gebeya.bankapi.Service.MobileBankingUserService;
+import com.gebeya.bankapi.Service.TransactionService;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -126,7 +128,7 @@ public class AccountController {
     })
 
     @PostMapping("/transfer")
-    public ResponseEntity<?> transfer(@RequestBody TransferDTO transferDTO){
+    public ResponseEntity<?> transfer(@RequestBody com.gebeya.bankAPI.Model.DTO.TransferDTO transferDTO){
         ResponseModel responseModel = accountService.transfer(transferDTO);
         return ResponseEntity.ok(responseModel);
     }
