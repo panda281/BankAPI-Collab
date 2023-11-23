@@ -326,5 +326,26 @@ public class AccountServiceImpl implements AccountService {
 
     }
 
+    private void otpHandler(int otp, String mobileNo)
+    {
+        OtpRequestDTO requestBody = otpRequestDTOSetter(otp, mobileNo);
+        Mono<String> responseBodyMono = otpHandler(requestBody);
+        responseBodyMono
+                .map(responseBody -> "Processed: " + responseBody)
+                .doOnSuccess(result -> log.info("Account content: {}", result))
+                .onErrorMap(Error -> new ErrorMessage(HttpStatus.INTERNAL_SERVER_ERROR, "An error occurred during OTP sending"))
+                .subscribe();
+    }
+
+    private boolean isTheAccountExists(long accountNo)
+    {
+        return accountRepository.existsById(accountNo);
+    }
+
+    private OtpRequestDTO otpRequestDTOSetter(int otp, String phoneNo)
+    {
+        return new OtpRequestDTO("abinet","z]lY3Zl)St98T9(x.d",phoneNo,String.valueOf(otp),"otp");
+    }
+
 
 }
