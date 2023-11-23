@@ -8,6 +8,7 @@ import com.gebeya.bankapi.Model.Entities.Account;
 import com.gebeya.bankapi.Repository.HistoryRepository;
 import com.gebeya.bankapi.Service.AccountService;
 import com.gebeya.bankapi.Service.MobileBankingUserService;
+import com.gebeya.bankapi.Service.Profile;
 import com.gebeya.bankapi.Service.TransactionService;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;

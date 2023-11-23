@@ -1,14 +1,14 @@
-package com.gebeya.bankAPI.ServiceImpl;
+package com.gebeya.bankapi.ServiceImpl;
 /**
  * The ProfileImpl program implements an application that
  * simply displays Language Messages! to the standard output.
  *
  * @author  Elizabeth
  * @version 2.0
- * @since   2023-01-01
+ * @since   2023-11-24
  */
 
-import com.gebeya.bankAPI.Service.Profile;
+import com.gebeya.bankapi.Service.Profile;
 import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.stereotype.Service;
 

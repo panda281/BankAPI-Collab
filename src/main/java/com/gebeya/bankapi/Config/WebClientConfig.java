@@ -1,5 +1,5 @@
 
-package com.gebeya.bankAPI.Config;
+package com.gebeya.bankapi.Config;
 
         import org.springframework.context.annotation.Bean;
         import org.springframework.context.annotation.Configuration;

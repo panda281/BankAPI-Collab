@@ -1,5 +1,5 @@
 
-package com.gebeya.bankAPI.Service;
+package com.gebeya.bankapi.Service;
 
 public interface Profile {
     public String[] language(String lang);
