@@ -1,5 +1,4 @@
 package com.gebeya.bankapi.Model.Entities;
-
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.gebeya.bankapi.Model.Enums.CustomerProfile;
 import jakarta.persistence.*;

@@ -1,5 +1,4 @@
 package com.gebeya.bankapi.Model.Entities;
-
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.gebeya.bankapi.Model.Enums.ResponseCode;

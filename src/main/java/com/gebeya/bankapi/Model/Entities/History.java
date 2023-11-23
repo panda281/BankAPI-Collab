@@ -1,11 +1,9 @@
 package com.gebeya.bankapi.Model.Entities;
-
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.gebeya.bankapi.Model.Enums.ResponseCode;
 import com.gebeya.bankapi.Model.Enums.SIDE;
 import com.gebeya.bankapi.Model.Enums.TransactionCode;
 import jakarta.persistence.*;
-
 import java.time.LocalDateTime;
 
 @Entity
