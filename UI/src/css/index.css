@@ -1,0 +1,56 @@
+.app {
+    text-align: center;
+  }
+  
+  .app-logo {
+    height: 200px;
+    pointer-events: none;
+  }
+  
+  .app-header {
+    background-color: #282c34;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+  
+  .app-nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: #f0f0f0;
+    padding: 10px 0;
+  }
+  
+  .app-content {
+    margin: 20px;
+  }
+  
+  .action-button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .action-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .app-footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #282c34;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+  }
+  
